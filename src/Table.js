@@ -16,7 +16,6 @@ function Table({ columns, data }) {
     getTableProps,
     getTableBodyProps,
     headerGroups,
-    rows,
     prepareRow,
     pageOptions,
     page,
