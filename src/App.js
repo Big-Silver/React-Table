@@ -46,6 +46,7 @@ const Styles = styled.div`
 `;
 
 function App() {
+  const [fetching, setFetching] = useState(true);
   const [tableRowData, setTableRowData] = useState([]);
   useEffect(() => {
     getTableData();
@@ -60,7 +61,7 @@ function App() {
       const response = await axios.get(
         "https://liquality.io/swap/agent/api/swap/marketinfo"
       );
-      console.log(response);
+      setFetching(false);
       setTableRowData(response.data);
     } catch (error) {
       console.error(error);
@@ -109,9 +110,15 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
         <p className="App-link">Test Project</p>
       </header>
-      <Styles>
-        <Table columns={columns} data={tableRowData} />
-      </Styles>
+      {fetching ? (
+        <p>Fetching table data... </p>
+      ) : tableRowData.length === 0 ? (
+        <p>No data</p>
+      ) : (
+        <Styles>
+          <Table columns={columns} data={tableRowData} />
+        </Styles>
+      )}
     </div>
   );
 }
