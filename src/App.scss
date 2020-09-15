@@ -1,0 +1,39 @@
+.App {
+  text-align: center;
+  min-width: 400px;
+  .App-logo {
+    height: 80px;
+    width: 80px;
+    pointer-events: none;
+  }
+  .App-header {
+    width: 100%;
+    background-color: #282c34;
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+  }
+  .App-link {
+    color: white;
+  }
+  table {
+    margin: 0 auto;
+  }
+  .pagination {
+    margin-bottom: 20px;
+    .pgn-button {
+      width: 40px;
+      height: 40px;
+      margin: 0 5px;
+    }
+    .pgn-text {
+      margin: 0 20px;
+    }
+    select {
+      margin-top: 10px;
+    }
+  }
+}
